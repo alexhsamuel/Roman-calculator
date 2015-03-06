@@ -2,7 +2,9 @@ Roman numeral calculator
 ==
 
 In this project, we are going to build a simple calculator with a twist-- a 
-calculator that calculates on Roman numerals!
+calculator that calculates on Roman numerals! 
+
+_This is a difficult project!_  Don't feel frustrated if it takes you a while to complete it.
 
 
 Roman numerals
@@ -56,7 +58,7 @@ The team
 
 Each team should elect the _team lead_, who is responsible for,
 
-* Creating and managing the git repository.
+* Forking and managing the git repository.
 
 * Reviewing all code.
 
@@ -69,7 +71,9 @@ assignments.
 Use github to share code among the groups, as it is ready.  The team lead should
 coordinate this.  The team lead should review all code.  Others should review
 code as well, if they have time.  If one group finishes before the others, it
-should help however possible to move the team forward.
+should help however possible to move the team forward.  At the end, each person
+on the team should review the complete solution, and ask questions to understand
+all the code.
 
 Once you have completed your assignments, you will have a complete Roman
 numerals calculator!
