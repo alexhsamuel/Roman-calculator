@@ -34,7 +34,7 @@ In addition, these special combinations are used:
 No symbol should ever appear more than three times in a row.  There is exactly
 one correct way of writing every number between 1 and 3999.
 
-For example, 25 is XXV, 95 is XCV, 99 is XCIX, and 642 is DCXLII.
+For example, 25 is XXV, 95 is XCV, 99 is XCIX, 642 is DCXLII, and 2015 is MMXV.
 
 
 The repository
@@ -44,7 +44,11 @@ The repository
 
 Each team will solve this problem separately.  Start by forking this repository:
 
-    http://github.com/accesscode-2-1/Roman numerals
+  http://github.com/accesscode-2-1/Roman-calculator
+
+Each team member should clone the repository and open it in IntelliJ.  The
+repository already contains some code for you:
+
 
 
 The team
