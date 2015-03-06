@@ -40,14 +40,14 @@ For example, 25 is XXV, 95 is XCV, 99 is XCIX, and 642 is DCXLII.
 The repository
 --
 
-**FIXME** 
-
 Each team will solve this problem separately.  Start by forking this repository:
 
-    http://github.com/accesscode-2-1/Roman numerals
+>  http://github.com/accesscode-2-1/Roman numerals
 
 Each team member should clone the _forked_ repository and work there.  Open the
-project in IntelliJ.  There's already some code written:
+project in IntelliJ.  There's already some code written: we've provided
+the skeleton for the methods you will have to write, as well as the main 
+calculator loop.  
 
 
 The team
@@ -61,15 +61,85 @@ Each team should elect the _team lead_, who is responsible for,
 
 * Making sure all code works correctly together.
 
-Each team should split into three groups.  The team lead is in group 3.
+Each team should split into three groups.  The team lead should be in group 3.
+The two members of each group should pair-program to solve the group's
+assignments.  
+
+Use github to share code among the groups, as it is ready.  The team lead should
+coordinate this.  The team lead should review all code.  Others should review
+code as well, if they have time.  If one group finishes before the others, it
+should help however possible to move the team forward.
+
+Once you have completed your assignments, you will have a complete Roman
+numerals calculator!
+
 
 **Group 1**
 
 The first group will write the code that formats a number as Roman numerals.
+Fill in the `RomanNumerals.format()` method. 
 
-2. The second group will write the code that parses a number in Roman numerals.
+**Group 2**
 
-3. The first group will write the calculator itself, and code to verify that
-the formatting and parsing code work correctly.
+The second group will write the code that parses a number in Roman numerals into
+an ordinal `int`.  (Note!  This is hard!)  Fill in the `RomanNumerals.parse()`
+method.
 
+**Group 3**
+
+The third group has two jobs.
+
+First, write code that tests the `format()` and `parse()` methods that the
+other two groups are working on.  Fill in the `RomanNumerals.main()` method.
+It's up to you to decide how to test.  You won't be able to run your test
+code successfully until the other groups are done with their work.
+
+Second, write code that performs the calculation.  This is the
+`Calculator.calculate` method.  Ultimately, this will accept and print out Roman
+numerals, but until the other groups are done with their work, you should
+instead use normal decimal numbers.  We've provided a `parseDecimalNumber()`
+method to help you with this.  That way, you can test that your logic works
+correctly.  Once the other groups are done, you should use their
+`RomanNumerals.format()` and `RomanNumerals.parse()` methods.
+
+
+The result
+--
+
+The final program prints a prompt and waits for you to type a simple expression
+to calculate.  An expression consists of a number in Roman numerals, followed
+by an operation, followed by another number in Roman numerals.  Each should
+be separated by a space.
+
+The program will behave like this:
+
+    > I + I
+    II
+
+    > VII * VI
+    XLII
+
+    > M - I
+    CMXCIX
+
+    > C % IX
+    I
+
+    > D # DC
+    DL
+
+    > D
+    syntax error
+
+    > XVII + 4
+    invalid number: 4
+
+    > X @ XX
+    invalid operation: @
+
+    >
+    done
+
+If you provide an empty input, the program prints "done" and exits.  Otherwise,
+it keeps running indefinitely.
 
