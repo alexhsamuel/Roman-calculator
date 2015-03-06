@@ -23,6 +23,7 @@ Roman numerals use the following symbols to express numbers.
 Symbols must appear from highest value to lowest value.
 In addition, these special combinations are used:
 
+  Combo  | Value|
   :------|-----:|:------------------
   CM     |  900 | (instead of DCCCC)
   CD     |  400 | (instead of CCCC)
