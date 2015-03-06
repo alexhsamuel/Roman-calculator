@@ -43,7 +43,7 @@ The repository
 
 Each team will solve this problem separately.  Start by forking this repository:
 
->  https://github.com/alexhsamuel/Roman-calculator
+>  https://github.com/accesscode-2-1/Roman-calculator
 
 Each team member should clone the _forked_ repository and work there.  Open the
 project in IntelliJ.  There's already some code written: we've provided
