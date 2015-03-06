@@ -66,7 +66,7 @@ public class RomanNumerals {
             result += "I";
             value -= 1;
         }
-        assert(value == 0);
+        // At this point, the value will be zero.
         return result;
     }
 
@@ -81,9 +81,18 @@ public class RomanNumerals {
         int value = 0;
         int length = number.length();
         int i = 0;
+        // Keep going until we reach the end of the string.
         while (i < length) {
+            // Get the next character.
             char c = number.charAt(i);
-            char n = i < length - 1 ? number.charAt(i + 1) : ' ';
+            // Also get the one after that.  We need it to spot combinations like IV.
+            char n;
+            if (i < length - 1)
+                n = number.charAt(i + 1);
+            else
+                // Careful!  Don't call charAt() beyond the end of the string.
+                n = ' ';
+
             if (c == 'M') {
                 value += 1000;
                 i += 1;
@@ -142,12 +151,18 @@ public class RomanNumerals {
         return value;
     }
 
+    /**
+     * This program is for testing purposes: it goes through every number
+     * between 1 and 3999, formats it as Roman numerals, and parses them
+     * back.  If all works correctly, the parsed value should equal the
+     * original value.
+     */
     public static void main(String[] argv) {
-        for (int i = 1; i < 4000; ++i) {
-            final String rn = format(i);
-            final int j = parse(rn);
-            System.out.format("%4d = %-15s = %4d\n", i, rn, j);
-            if (i != j)
+        for (int value = 1; value < 4000; ++value) {
+            final String romanNumeral = format(value);
+            final int result = parse(romanNumeral);
+            System.out.println(value + " = " + romanNumeral + " = " + result);
+            if (value != result)
                 System.err.println("ERROR!");
         }
     }

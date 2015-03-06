@@ -46,6 +46,9 @@ Each team will solve this problem separately.  Start by forking this repository:
 
     http://github.com/accesscode-2-1/Roman numerals
 
+Each team member should clone the _forked_ repository and work there.  Open the
+project in IntelliJ.  There's already some code written:
+
 
 The team
 --
@@ -57,7 +60,6 @@ Each team should elect the _team lead_, who is responsible for,
 * Reviewing all code.
 
 * Making sure all code works correctly together.
-
 
 Each team should split into three groups.  The team lead is in group 3.
 
