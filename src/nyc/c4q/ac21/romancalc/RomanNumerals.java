@@ -29,6 +29,7 @@ public class RomanNumerals {
         // You will need:
         //   `number.length()` gives you the length of the string
         //   `number.charAt(i)` gives you the character at position `i`
+        return -1;
     }
 
     public static void main(String[] argv) {
