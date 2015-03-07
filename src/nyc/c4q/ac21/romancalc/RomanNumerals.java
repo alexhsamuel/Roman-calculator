@@ -25,6 +25,10 @@ public class RomanNumerals {
      */
     public static int parse(String number) {
         // TODO: Group 2: Write this function!
+        
+        // You will need:
+        //   `number.length()` gives you the length of the string
+        //   `number.charAt(i)` gives you the character at position `i`
     }
 
     public static void main(String[] argv) {
