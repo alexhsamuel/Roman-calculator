@@ -16,6 +16,7 @@ public class Calculator {
      * less than 1 or larger than 3999, prints a message indicating this
      * instead.
      *
+     *
      * @param leftNumber
      *   The left operand, in Roman numerals.
      * @param operation
@@ -31,6 +32,18 @@ public class Calculator {
      */
     public static void calculate(String leftNumber, String operation, String rightNumber) {
         // TODO: Group 3: Write this function!
+        Scanner userInput = new Scanner(System.in);
+
+
+        leftNumber = leftNumber;
+        System.out.println("Welcome to the Roman calculator. Type in a roman numeral");
+        userInput.nextInt();
+        System.out.println("Please type an operator.");
+        userInput.nextInt();
+        System.out.println("Please type a second roman numeral.");
+
+
+
     }
 
     /**
