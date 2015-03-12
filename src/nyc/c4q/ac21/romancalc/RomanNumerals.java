@@ -16,6 +16,7 @@ public class RomanNumerals {
      */
     static String format(int value) {
         // TODO: Group 1: Write this function!
+
         return "???";
     }
 
@@ -39,47 +40,20 @@ public class RomanNumerals {
     public static void main(String[] argv) {
         // TODO: Group 3: Write this function!
         // It should test that format() and parse() work correctly.
-<<<<<<< HEAD
-
-        Scanner userInput = new Scanner(System.in);
 
 
+        String answer = format(234);
 
-
-
-        System.out.println("Welcome to the Roman calculator. Type in a roman numeral");
-        int leftNumber = userInput.nextInt();
-
-        System.out.println("Please type a second roman numeral.");
-        int rightNumber = userInput.nextInt();
-
-        System.out.println("Please type an operator.");
-        userInput.nextFloat();
-
-        String operation = userInput.next();
-        if (operation.equals("+")) {
-            System.out.println(leftNumber+rightNumber);
-        } else if (operation.equals("-")) {
-            System.out.println(leftNumber-rightNumber);
-        } else if (operation.equals("/")) {
-            System.out.println(leftNumber/rightNumber);
-        } else if (operation.equals("*")) {
-            System.out.println(leftNumber*rightNumber);
-        } else if (operation.equals("%")) {
-            System.out.println(leftNumber%rightNumber);
-        } else {
-            System.out.println("Invalid operation.");
+        //test
+        if ( ! format(5).equals("V") ) {
+            System.out.println("Error");
         }
+        if ( parse("V") == 5)
+            System.out.println("'V' Success!");
 
 
 
-
-
-
-
-
-
-=======
+        //format: input int output string
         System.out.print(format(18)); /* it should return XVIII*/
         System.out.print(format(29)); /* it should return XXIX*/
         System.out.print(format(34)); /* it should return XXXIV*/
@@ -93,6 +67,8 @@ public class RomanNumerals {
 
 
 
+
+        //parse: input string output int
         System.out.print(parse("XVIII")); /* it should return 18*/
         System.out.print(parse("XXIX")); /* it should return 29*/
         System.out.print(parse("XXXIV")); /* it should return 34*/
@@ -103,6 +79,6 @@ public class RomanNumerals {
         System.out.print(parse("MMCDXX")); /* it should return 2420*/
         System.out.print(parse("MMMCDLIV")); /* it should return 3454*/
         System.out.print(parse("MMMCMXCIX")); /* it should return 3999*/
->>>>>>> 868ddef1ea1616a139091f630166965f2d074112
+
     }
 }
