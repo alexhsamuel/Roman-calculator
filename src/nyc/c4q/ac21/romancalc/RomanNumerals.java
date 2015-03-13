@@ -14,10 +14,70 @@ public class RomanNumerals {
      * @return
      *   The value in Roman numerals.
      */
-    static String format(int value) {
-        // TODO: Group 1: Write this function!
 
-        return "???";
+    public static String format(int value) {
+        if (value <= 0 || value > 3999)
+            return "Error: not a valid Roman Numeral";
+        String num$ = "";               //represents integer # inputted.
+
+        while (value >= 1000) {        //Start with largest place. 1000's place.
+            num$ += "M";               //Print M for each multiple of 1000;
+            value = value - 1000;      //Remove 1000 from number. ex: 1984 = 1000 + 900 + 80 + 4
+        }                                       //MCMLXXIV
+        if (value >= 900) {
+            num$ += "CM";   //         //100 less than a 1000. ex: 984 = 900 (CM) + 80 + 4
+            value = value - 900;
+        }
+        if (value >= 500) {
+            num$ += "D";
+            value = value - 500;
+        }
+        if (value >= 400) {
+            num$ += "CD";
+            value = value - 400;
+        }
+        while (value >= 100) {
+            num$ += "C";
+            value -= 100;
+        }
+        if (value >= 90) {
+            num$ += "XC";
+            value -= 90;
+        }
+        if (value >= 60) {
+            num$ += "LX";
+            value -= 60;
+        }
+        if (value >= 50) {
+            num$ += "L";
+            value -= 50;
+        }
+        if (value >= 40) {
+            num$ += "XL";
+            value -= 40;
+        }
+        while (value >= 10) {
+            num$ += "X";
+            value -= 10;
+        }
+        if (value == 9) {
+            num$ += "IX";
+            value -= 9;
+        }
+        if (value >= 5) {
+            num$ += "V";
+            value -= 5;
+        }
+        if (value == 4) {
+            num$ += "IV";
+            value -= 4;
+        }
+        while (value >= 1) {
+            num$ += "I";
+            value -= 1;
+        }
+        System.out.println(num$);
+        return num$;
     }
 
     /**
@@ -27,99 +87,63 @@ public class RomanNumerals {
      * @return
      *   The value, or -1 if the number isn't in Roman numerals.
      */
-    public static int parse(String number) {
+    public static int parse(String romanNum) {
         // TODO: Group 2: Write this function!
-        
+
         // You will need:
         //   `number.length()` gives the length (number of characters) of the number
         //   `number.charAt(i)` gives the i'th character
-        Scanner input = new Scanner(System.in);
 
         int total = 0;
-        String romanNum = "";
 
 
-        romanNum.trim();
+        //romanNum.trim();
 
         for (int i = 0; i < romanNum.length(); i++) {
-            if (romanNum.charAt(i) == 'm')
+            if (romanNum.charAt(i) == 'M' || romanNum.charAt(i) == 'm')
                 total = total + 1000;
-            else if (romanNum.charAt(i) == 'd')
+            else if (romanNum.charAt(i) == 'D' || romanNum.charAt(i) == 'd')
                 total = total + 500;
-            else if (romanNum.charAt(i) == 'c')
+            else if (romanNum.charAt(i) == 'C' || romanNum.charAt(i) == 'c')
                 total = total + 100;
-            else if (romanNum.charAt(i) == 'l')
+            else if (romanNum.charAt(i) == 'L' || romanNum.charAt(i) == 'l')
                 total = total + 50;
-            else if (romanNum.charAt(i) == 'x')
+            else if (romanNum.charAt(i) == 'X' || romanNum.charAt(i) == 'x')
                 total = total + 10;
-            else if (romanNum.charAt(i) == 'v')
+            else if (romanNum.charAt(i) == 'V' || romanNum.charAt(i) == 'v')
                 total = total + 5;
-            else if (romanNum.charAt(i) == 'i')
+            else if (romanNum.charAt(i) == 'I' || romanNum.charAt(i) == 'i')
                 total = total + 1;
-            else
-                break;
+
         }
 
-        if (romanNum.indexOf("cm") > -1)
+        if (romanNum.indexOf("CM") > -1 ||romanNum.indexOf("cm") > -1 )
             total = total - 200;
-        if (romanNum.indexOf("cd") > -1)
+        if (romanNum.indexOf("CD") > -1 || romanNum.indexOf("cd") > -1)
             total = total - 200;
-        if (romanNum.indexOf("xc") > -1)
+        if (romanNum.indexOf("XC") > -1 || romanNum.indexOf("xc") > -1)
             total = total - 20;
-        if (romanNum.indexOf("xl") > -1)
+        if (romanNum.indexOf("XL") > -1 || romanNum.indexOf("xl") > -1)
             total = total - 20;
-        if (romanNum.indexOf("ix") > -1)
+        if (romanNum.indexOf("IX") > -1 || romanNum.indexOf("ix") > -1)
             total = total - 2;
-        if (romanNum.indexOf("iv") > -1)
+        if (romanNum.indexOf("IV") > -1 || romanNum.indexOf("iv") > -1)
             total = total - 2;
 
-        Retun total;
+        System.out.println(total);
+        return total;
+
+
     }
-        return -1;
-    }
+    //return -1;
+
 
     public static void main(String[] argv) {
         // TODO: Group 3: Write this function!
         // It should test that format() and parse() work correctly.
 
 
-        String answer = format(234);
-
-        //test
-        if ( ! format(5).equals("V") ) {
-            System.out.println("Error");
-        }
-        if ( parse("V") == 5)
-            System.out.println("'V' Success!");
-
-
-
-        //format: input int output string
-        System.out.print(format(18)); /* it should return XVIII*/
-        System.out.print(format(29)); /* it should return XXIX*/
-        System.out.print(format(34)); /* it should return XXXIV*/
-        System.out.print(format(46)); /* it should return XLVI*/
-        System.out.print(format(89)); /* it should return LXXXiX*/
-        System.out.print(format(846)); /* it should return DCCCXLVI*/
-        System.out.print(format(1999)); /* it should return MCMXCIX*/
-        System.out.print(format(2420)); /* it should return MMCDXX*/
-        System.out.print(format(3454)); /* it should return MMMCDLIV*/
-        System.out.print(format(3999)); /* it should return MMMCMXCIX*/
-
-
-
-
-        //parse: input string output int
-        System.out.print(parse("XVIII")); /* it should return 18*/
-        System.out.print(parse("XXIX")); /* it should return 29*/
-        System.out.print(parse("XXXIV")); /* it should return 34*/
-        System.out.print(parse("XLVI")); /* it should return 46*/
-        System.out.print(parse("LXXXiX")); /* it should return 89*/
-        System.out.print(parse("DCCCXLVI")); /* it should return 846*/
-        System.out.print(parse("MCMXCIX")); /* it should return 1999*/
-        System.out.print(parse("MMCDXX")); /* it should return 2420*/
-        System.out.print(parse("MMMCDLIV")); /* it should return 3454*/
-        System.out.print(parse("MMMCMXCIX")); /* it should return 3999*/
 
     }
 }
+
