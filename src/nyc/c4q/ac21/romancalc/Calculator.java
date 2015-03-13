@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    public static boolean validate(String num){
+    /*public static boolean validate(String num){
 
         for(int index=0;index < num.length(); index=index+1){
 
@@ -66,37 +66,36 @@ public class Calculator {
 
         if (left == -1 || right == -1) {
             System.out.println("Not a roman numeral! ");
-        }
 
-        if (operation.equals("+")) {
+        } else if (operation.equals("+")) {
 
-            result = left+right;
+            result = left + right;
 
         } else if (operation.equals("-")) {
             result = left - right;
         } else if (operation.equals("/")) {
-            result = left/right;
+            result = left / right;
         } else if (operation.equals("*")) {
-            result = left*right;
+            result = left * right;
         } else if (operation.equals("%")) {
             result = left % right;
         } else {
             System.out.println("Invalid operation.");
+
+
+            if (result < 0) {
+                System.out.println("Result is less than 1! It doesn't exist!");
+            }
+
+            if (result > 3999) {
+                System.out.println("Result is higher than 3999, Romans couldn't count that high!");
+            }
+
+            String output = RomanNumerals.format(result);
+
+            System.out.println(output);
+
         }
-
-
-        if (result < 1) {
-            System.out.println("Result is less than 1! It doesn't exist!");
-        }
-
-        if (result > 3999) {
-            System.out.println("Result is higher than 3999, Romans couldn't count that high!");
-        }
-
-        String output = RomanNumerals.format(result);
-
-        System.out.println(output);
-
     }
 
     /**
@@ -150,25 +149,23 @@ public class Calculator {
             }
 
 
-            /*(! validate(leftNumber)){
+           /* if (! validate(leftNumber) || (! validate(rightNumber)))
                 System.err.println("syntax error - LeftNumber not a roman numeral");
                 System.out.println();
                 continue;
-           // }
-            if(! validate(rightNumber)){
+
+            if (! validate(rightNumber))
                 System.err.println("syntax error - rightNumber not a roman numeral");
                 System.out.println();
                 continue;
-            }
-            System.out.println("Let's do cool stuff!");*/
 
-            // Perform the calculation and show the result.
-            calculate(leftNumber, operation, rightNumber);
-
-            System.out.println();
+            // Perform the calculation and show the result.*/
+           calculate(leftNumber, operation, rightNumber);
 
 
-            }
+
+        }
 
     }
 }
+
