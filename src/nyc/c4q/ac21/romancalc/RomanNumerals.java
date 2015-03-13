@@ -76,7 +76,7 @@ public class RomanNumerals {
             num$ += "I";
             value -= 1;
         }
-        System.out.println(num$);
+        //System.out.println(num$);
         return num$;
     }
 
@@ -130,7 +130,7 @@ public class RomanNumerals {
         if (romanNum.indexOf("IV") > -1 || romanNum.indexOf("iv") > -1)
             total = total - 2;
 
-        System.out.println(total);
+        //System.out.println(total);
         return total;
 
 
