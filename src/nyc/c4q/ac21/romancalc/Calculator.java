@@ -59,44 +59,30 @@ public class Calculator {
     public static void calculate(String leftNumber, String operation, String rightNumber) {
         // TODO: Group 3: Write this function!
 
-
-        int left = RomanNumerals.parse(leftNumber);
-        int right = RomanNumerals.parse(rightNumber);
+        int leftInt = RomanNumerals.parse(leftNumber);
+        int rightInt = RomanNumerals.parse(rightNumber);
         int result = 0;
 
-        if (left == -1 || right == -1) {
-            System.out.println("Not a roman numeral! ");
-
-        } else if (operation.equals("+")) {
-
-            result = left + right;
-
-        } else if (operation.equals("-")) {
-            result = left - right;
-        } else if (operation.equals("/")) {
-            result = left / right;
-        } else if (operation.equals("*")) {
-            result = left * right;
-        } else if (operation.equals("%")) {
-            result = left % right;
-        } else {
-            System.out.println("Invalid operation.");
-
-
-            if (result < 0) {
-                System.out.println("Result is less than 1! It doesn't exist!");
-            }
-
-            if (result > 3999) {
-                System.out.println("Result is higher than 3999, Romans couldn't count that high!");
-            }
-
-            String output = RomanNumerals.format(result);
-
-            System.out.println(output);
-
+        if (operation.equals("+")){
+            result = leftInt + rightInt;
         }
+        else if (operation.equals("-")){
+            result = leftInt - rightInt;
+        }
+        else if (operation.equals("*")){
+            result = leftInt * rightInt;
+        }
+        else if (operation.equals("/")){
+            result = leftInt / rightInt;
+        }
+        else if (operation.equals("#")) {
+            result = (leftInt + rightInt) / 2;
+        }
+
+        System.out.println(RomanNumerals.format(result));
+
     }
+
 
     /**
      * Parses a decimal number.
@@ -123,9 +109,10 @@ public class Calculator {
      */
     public static void main(String[] args) throws IOException {
 
+
         final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         // Loop forever.
-        while (true) {
+       while (true) {
             // Show the prompt.
             System.out.print("> ");
             // Read a line of input.
@@ -147,25 +134,10 @@ public class Calculator {
                 System.out.println();
                 continue;
             }
+            calculate(leftNumber, operation, rightNumber);
 
-
-           /* if (! validate(leftNumber) || (! validate(rightNumber)))
-                System.err.println("syntax error - LeftNumber not a roman numeral");
-                System.out.println();
-                continue;
-
-            if (! validate(rightNumber))
-                System.err.println("syntax error - rightNumber not a roman numeral");
-                System.out.println();
-                continue;
-
-            // Perform the calculation and show the result.*/
-           calculate(leftNumber, operation, rightNumber);
-
-
-
-        }
+            System.out.println();
 
     }
-}
+}}
 
