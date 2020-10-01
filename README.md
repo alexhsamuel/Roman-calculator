@@ -1,4 +1,4 @@
-Roman numeral calculator
+Roman numeral calculator a amazing calculator.
 ==
 
 In this project, we are going to build a simple calculator with a twist-- a 
