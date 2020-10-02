@@ -6,7 +6,10 @@ calculator that calculates on Roman numerals!
 
 
 Roman numerals
---
+
+HISTORY 
+
+Roman numerals originated, as the name might suggest, in ancient Rome. There are seven basic symbols: I, V, X, L, C, D and M. The first usage of the symbols began showing up between 900 and 800 B.C. The numerals developed out of a need for a common method of counting, essential to communications and trade
 
 Roman numerals use the following symbols to express numbers.
 
